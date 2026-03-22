@@ -10,7 +10,7 @@ const play = document.querySelector("#restart");
 function game(){
      panel.style.display="block"
         result.style.display="none"
-let t = 10;
+let t = 60;
 time.textContent = t;
 let scoreval = 0;
 score.textContent = scoreval;
@@ -46,7 +46,8 @@ bp.addEventListener("click", function (e) {
   if (hit.textContent == e.srcElement.textContent) {
     scoreval+=10;
     score.textContent = scoreval;
-  } else {
+  }
+   else if((hit.textContent != e.srcElement.textContent)) {
     scoreval-=10;
     score.textContent = scoreval;
   }
