@@ -7,6 +7,8 @@ const fscore = document.querySelector("#fscore");
 const result = document.querySelector(".result");
 const play = document.querySelector("#restart");
 
+
+
 function game(){
      panel.style.display="block"
         result.style.display="none"
@@ -35,13 +37,16 @@ function timer() {
 function makebubble() {
   for (let i = 0; i < 120; i++) {
     const num = Math.floor(Math.random() * 10 + 1);
-    const b = document.createElement("nav");
-    // b.add.classList(bubble)
+    const b = document.createElement("div");
+    b.classList.add("bubble")
     b.textContent = num;
     bp.append(b);
   }
 }
 makebubble();
+timer();
+hits();
+
 bp.addEventListener("click", function (e) {
   if (hit.textContent == e.srcElement.textContent) {
     scoreval+=10;
@@ -55,9 +60,7 @@ bp.addEventListener("click", function (e) {
   bp.innerHTML = "";
   makebubble();
 });
-makebubble();
-timer();
-hits();
+
 
 }
 
